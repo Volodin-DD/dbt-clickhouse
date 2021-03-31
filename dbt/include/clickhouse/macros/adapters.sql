@@ -48,7 +48,7 @@
     create temporary table {{ relation.name }}
     engine = Memory
     {{ order_cols(label="order by") }}
-    {{ partition_cols(label="partitioned by") }}
+    {{ partition_cols(label="partition by") }}
   {%- else %}
     create table {{ relation.include(database=False) }}
     {{ engine_clause(label="engine") }}
